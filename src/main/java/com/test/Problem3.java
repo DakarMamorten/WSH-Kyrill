@@ -54,8 +54,7 @@ public class Problem3 {
     private static void d() {
         int lines = 15;
 
-        if (lines % 2 == 0) {
-        } else {
+        if (lines % 2 != 0) {
             lines = lines / 2 * 2;
         }
         int halfNumber = lines / 2;
