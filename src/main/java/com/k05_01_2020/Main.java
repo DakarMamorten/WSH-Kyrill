@@ -1,8 +1,5 @@
 package com.k05_01_2020;
 
-/**
- * @author Sergey Manko
- */
 public class Main {
 	public static void main(String[] args) {
 		Course engineer = new Course("engineer");
