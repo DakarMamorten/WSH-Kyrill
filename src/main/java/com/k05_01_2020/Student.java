@@ -1,45 +1,85 @@
-package com.k05_01_2020;//********************************************************************
-//  com.k05_01_2020.Student.java       Author: Lewis/Loftus
-//
-//  Represents a college student.
-//********************************************************************
+package com.k05_01_2020;
 
 public class Student {
-    private final String firstName;
-    private final String lastName;
-    private final Address homeAddress;
-    private final Address schoolAddress;
-    private final int scoreForFirstTest;
-    private final int scoreForSecondTest;
-    private final int scoreForThirdTest;
+	private final String firstName;
+	private final String lastName;
+	private final Address homeAddress;
+	private final Address schoolAddress;
+	private int scoreForFirstTest;
+	private int scoreForSecondTest;
+	private int scoreForThirdTest;
+	private Course course;
 
-    //-----------------------------------------------------------------
-    //  Constructor: Sets up this student with the specified values.
-    //-----------------------------------------------------------------
-    public Student(String first, String last, Address home,
-                   Address school, int scoreForFirstTest,int scoreForSecondTest,int scoreForThirdTest) {
-        firstName = first;
-        lastName = last;
-        homeAddress = home;
-        schoolAddress = school;
-        this.scoreForFirstTest = scoreForFirstTest;
-        this.scoreForSecondTest = scoreForSecondTest;
-        this.scoreForThirdTest = scoreForThirdTest;
-    }
+	public Student(String first, String last, Address home, Address school, int scoreForFirstTest,
+			int scoreForSecondTest, int scoreForThirdTest) {
+		firstName = first;
+		lastName = last;
+		homeAddress = home;
+		schoolAddress = school;
+		this.scoreForFirstTest = scoreForFirstTest;
+		this.scoreForSecondTest = scoreForSecondTest;
+		this.scoreForThirdTest = scoreForThirdTest;
+	}
 
-    //-----------------------------------------------------------------
-    //  Returns a string description of this com.k05_01_2020.Student object.
-    //-----------------------------------------------------------------
-    public String toString() {
-        String result;
+	public Student(String first, String last, Address home, Address school, int scoreForFirstTest,
+			int scoreForSecondTest, int scoreForThirdTest, Course course) {
+		firstName = first;
+		lastName = last;
+		homeAddress = home;
+		schoolAddress = school;
+		this.scoreForFirstTest = scoreForFirstTest;
+		this.scoreForSecondTest = scoreForSecondTest;
+		this.scoreForThirdTest = scoreForThirdTest;
+		this.course = course;
+	}
 
-        result = firstName + " " + lastName + "\n";
-        result += "Home Address:\n" + homeAddress + "\n";
-        result += "School Address:\n" + schoolAddress;
-        result += "score for first test:\n" + scoreForFirstTest;
-        result += "score for second test:\n" + scoreForSecondTest;
-        result += "score for third test:\n" + scoreForThirdTest;
-        return result;
-    }
+	public Student(String first, String last, Address home, Address school) {
+		firstName = first;
+		lastName = last;
+		homeAddress = home;
+		schoolAddress = school;
+		this.scoreForFirstTest = 0;
+		this.scoreForSecondTest = 0;
+		this.scoreForThirdTest = 0;
+	}
 
+	public int getTestScore(int numberOfTest) {
+		switch (numberOfTest) {
+		case 1:
+			return scoreForFirstTest;
+		case 2:
+			return scoreForSecondTest;
+		case 3:
+			return scoreForThirdTest;
+		default:
+		}
+		return numberOfTest;
+	}
+
+	public void setTestScore(int numberOfTest, int score) {
+		switch (numberOfTest) {
+		case 1:
+			scoreForFirstTest = score;
+			break;
+		case 2:
+			scoreForSecondTest = score;
+			break;
+		case 3:
+			scoreForThirdTest = score;
+			break;
+		default:
+		}
+	}
+
+	public int avg() {
+		return (this.scoreForFirstTest + this.scoreForSecondTest + this.scoreForThirdTest) / 3;
+	}
+
+	@Override
+	public String toString() {
+		return "Student{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", homeAddress="
+				+ homeAddress + ", schoolAddress=" + schoolAddress + ", scoreForFirstTest=" + scoreForFirstTest
+				+ ", scoreForSecondTest=" + scoreForSecondTest + ", scoreForThirdTest=" + scoreForThirdTest
+				+ ", course=" + course + ", avg=" + avg() + '}';
+	}
 }

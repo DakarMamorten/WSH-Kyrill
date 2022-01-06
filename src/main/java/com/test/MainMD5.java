@@ -1,6 +1,5 @@
 package com.test;
 
-import javax.xml.bind.DatatypeConverter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -12,10 +11,10 @@ public class MainMD5 {
         MessageDigest md = MessageDigest.getInstance("SHA-1");
         md.update(password.getBytes());
         byte[] digest = md.digest();
-        String myHash = DatatypeConverter
-                .printHexBinary(digest).toUpperCase();
+//        String myHash = DatatypeConverter
+//                .printHexBinary(digest).toUpperCase();
 
         System.out.println(hash);
-        System.out.println(myHash);
+//        System.out.println(myHash);
     }
 }
