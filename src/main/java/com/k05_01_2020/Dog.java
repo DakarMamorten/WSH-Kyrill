@@ -1,42 +1,42 @@
 package com.k05_01_2020;
 
 public class Dog {
-    private String name;
-    private int age;
+	private String name;
+	private int age;
 
-    public Dog(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+	public Dog(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
 
-    public Dog() {
-    }
+	public Dog() {
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public int getAge() {
-        return age;
-    }
+	public int getAge() {
+		return age;
+	}
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+	public void setAge(int age) {
+		this.age = age;
+	}
 
-    public int getAgePeople(){
-        return getAge()*7;
-    }
+	public int getAgePeople() {
+		return getAge() * 7;
+	}
 
-    @Override
-    public String toString() {
-        return "Dog{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Dog{" +
+				"name='" + name + '\'' +
+				", age=" + age +
+				'}';
+	}
 }
